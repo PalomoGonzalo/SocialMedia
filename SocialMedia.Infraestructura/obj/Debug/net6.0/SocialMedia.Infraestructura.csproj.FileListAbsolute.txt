@@ -13,3 +13,5 @@ C:\Users\mati_\Desktop\SocialMedia\SocialMedia.Infraestructura\obj\Debug\net6.0\
 C:\Users\mati_\Desktop\SocialMedia\SocialMedia.Infraestructura\obj\Debug\net6.0\refint\SocialMedia.Infraestructura.dll
 C:\Users\mati_\Desktop\SocialMedia\SocialMedia.Infraestructura\obj\Debug\net6.0\SocialMedia.Infraestructura.pdb
 C:\Users\mati_\Desktop\SocialMedia\SocialMedia.Infraestructura\obj\Debug\net6.0\ref\SocialMedia.Infraestructura.dll
+C:\Users\mati_\Desktop\SocialMedia\SocialMedia.Infraestructura\bin\Debug\net6.0\SocialMedia.Infraestructura.runtimeconfig.json
+C:\Users\mati_\Desktop\SocialMedia\SocialMedia.Infraestructura\obj\Debug\net6.0\SocialMedia.Infraestructura.genruntimeconfig.cache
