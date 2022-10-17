@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NDsv+DTQcIUgUM8JHX60S07CByCOzIVQZ24+YC+KN/vNvQ+ub2xx0rSBz8MmgJLhcQfjtHR7PRXmKk2dnTEbjA==",
+  "dgSpecHash": "GH+h1UsNVpxpwIxZMPGNbjgHUIOuaYPhAWOyCIYvdparMQg1ruxsrTGFPWpGSxLQm7NnxMxozyRVq1IkfFWZqQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mati_\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\mati_\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mati_\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\mati_\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

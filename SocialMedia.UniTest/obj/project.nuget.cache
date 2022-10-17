@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "L2nsoUjXWjnCPUrOj0p6nDC3JsEwQkX4UXshYlGkahbiNQIVWBG0WG9ymnfoConCjdniHHNyoa6Rqh+Gh9SW6Q==",
+  "dgSpecHash": "KO4SMe6lsOagmbHh6vAHJk1tqrQlJFbtQDUdV2qg+kZhcgVI6gokpg5VpADMmRRpZUv3u3gQS65aM4x0TSakgQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.UniTest\\SocialMedia.UniTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mati_\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
+    "C:\\Users\\mati_\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\mati_\\.nuget\\packages\\microsoft.codecoverage\\16.11.0\\microsoft.codecoverage.16.11.0.nupkg.sha512",
     "C:\\Users\\mati_\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\mati_\\.nuget\\packages\\microsoft.net.test.sdk\\16.11.0\\microsoft.net.test.sdk.16.11.0.nupkg.sha512",

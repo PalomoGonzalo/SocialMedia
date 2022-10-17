@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "VMufugX53Bmqs6p256XHRW3RsIrWLTmRrrAUmzNDEf0L6DEn4WvmvhWJYrBHJOIGK2ES3QwKOwnWkymKSFgFiw==",
+  "dgSpecHash": "irdcPml1UOja2HCEGk49iTAjyWaeUf83PRiF26WWBy8EFiDW0rq5hmBBof3yTGJ/cYnFoQmUTQt6xjswo8K7Cw==",
   "success": true,
   "projectFilePath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mati_\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512"
+  ],
   "logs": []
 }

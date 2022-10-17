@@ -23,14 +23,25 @@ namespace SocialMedia.Api.Controllers
         }
 
 
-        [HttpGet]
-        public async Task<IActionResult> GetPosts()
+        [HttpGet("ObtenerPublicaciones")]
+        public async Task<IActionResult> ObtenerPublicaciones()
         {
             var publicaciones= await _publicacionRepositorio.GetPublicaciones();
             
             return Ok(publicaciones);
         }
 
+        [HttpGet("ObtenerPublicacionPorId/{id}")]
+        public async Task<IActionResult> ObtenerPublicacionPorId(int id)
+        {
+            var publicacionPorId= await _publicacionRepositorio.GetPublicacion(id);
+            if(publicacionPorId==null)
+            {
+                return NotFound($"El id {id} no existe");
+            }
+
+            return Ok(publicacionPorId);
+        }
        
     }
 }

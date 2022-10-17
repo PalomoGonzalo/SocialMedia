@@ -10,5 +10,7 @@ namespace SocialMedia.Core.Interfaces
     public interface IPublicacionRepositorio
     {
         Task< IEnumerable<Publicacion>> GetPublicaciones();
+
+        Task<Publicacion> GetPublicacion(int id);
     }
 }
