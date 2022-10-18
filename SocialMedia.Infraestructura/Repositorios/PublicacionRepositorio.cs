@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using SocialMedia.Core.DTOS;
 using SocialMedia.Core.Entidades;
 using SocialMedia.Core.Interfaces;
 using System;
@@ -21,26 +22,29 @@ namespace SocialMedia.Infraestructura.Repositorios
             _config = config;
         }
 
-        public async Task<Publicacion> GetPublicacion(int id)
+        public async Task<PublicacionDTO> GetPublicacion(int id)
         {
             using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            if(db.State==ConnectionState.Closed)
+                db.Open();
+
             string sql = @"SELECT * FROM Publicacion where IdPublicacion = @id";
 
             DynamicParameters dp = new DynamicParameters();
             dp.Add("id", id, DbType.Int64);
 
-            var publicacion = await db.QueryFirstOrDefaultAsync<Publicacion>(sql,dp);
+            var publicacion = await db.QueryFirstOrDefaultAsync<PublicacionDTO>(sql,dp);
 
             return publicacion;
         }
 
-        public async Task<IEnumerable<Publicacion>> GetPublicaciones()
+        public async Task<IEnumerable<PublicacionDTO>> GetPublicaciones()
         {
             using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
 
-            string sql = @"SELECT * FROM Publicacion;";
+            string sql = @"SELECT * FROM Publicacion ";
 
-            IEnumerable<Publicacion> lista = await db.QueryAsync<Publicacion>(sql).ConfigureAwait(false);
+            IEnumerable<PublicacionDTO> lista = await db.QueryAsync<PublicacionDTO>(sql).ConfigureAwait(false);
             
             return lista;
  

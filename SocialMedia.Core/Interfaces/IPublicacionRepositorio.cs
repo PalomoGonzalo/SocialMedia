@@ -1,4 +1,5 @@
-﻿using SocialMedia.Core.Entidades;
+﻿using SocialMedia.Core.DTOS;
+using SocialMedia.Core.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,9 @@ namespace SocialMedia.Core.Interfaces
 {
     public interface IPublicacionRepositorio
     {
-        Task< IEnumerable<Publicacion>> GetPublicaciones();
 
-        Task<Publicacion> GetPublicacion(int id);
+        Task< IEnumerable<PublicacionDTO>> GetPublicaciones();
+
+        Task<PublicacionDTO> GetPublicacion(int id);
     }
 }

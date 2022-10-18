@@ -11,8 +11,9 @@ using SocialMedia.Infraestructura.Repositorios;
 
 namespace SocialMedia.Api.Controllers
 {
+    [ApiController]
     [Route("api/[controller]")]
-    public class PublicacionController : Controller
+    public class PublicacionController : ControllerBase
     {
         
         private readonly IPublicacionRepositorio _publicacionRepositorio;
@@ -27,6 +28,11 @@ namespace SocialMedia.Api.Controllers
         public async Task<IActionResult> ObtenerPublicaciones()
         {
             var publicaciones= await _publicacionRepositorio.GetPublicaciones();
+
+            if(publicaciones==null)
+            {
+                return NotFound("No existe publicaciones");  
+            }
             
             return Ok(publicaciones);
         }
