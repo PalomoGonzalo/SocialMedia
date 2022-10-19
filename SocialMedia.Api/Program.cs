@@ -1,4 +1,5 @@
 using SocialMedia.Core.Interfaces;
+using SocialMedia.Infraestructura.Filtro;
 using SocialMedia.Infraestructura.Repositorios;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IPublicacionRepositorio, PublicacionRepositorio>();
+builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+
+builder.Services.AddMvc(options =>
+{
+    options.Filters.Add<ValidacionFiltro>();
+});
 
 
 

@@ -5,9 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SocialMedia.Core.DTOS;
 using SocialMedia.Core.Entidades;
 using SocialMedia.Core.Interfaces;
 using SocialMedia.Infraestructura.Repositorios;
+using SocialMedia.Infraestructura.Filtro;
 
 namespace SocialMedia.Api.Controllers
 {
@@ -17,10 +19,12 @@ namespace SocialMedia.Api.Controllers
     {
         
         private readonly IPublicacionRepositorio _publicacionRepositorio;
+        private readonly IUsuarioRepositorio _usuarioRepositorio;
 
-        public PublicacionController(IPublicacionRepositorio publicacionRepositorio)
+        public PublicacionController(IPublicacionRepositorio publicacionRepositorio, IUsuarioRepositorio usuarioRepositorio)
         {
             _publicacionRepositorio = publicacionRepositorio;
+            _usuarioRepositorio = usuarioRepositorio;
         }
 
 
@@ -47,6 +51,26 @@ namespace SocialMedia.Api.Controllers
             }
 
             return Ok(publicacionPorId);
+        }
+
+        [HttpPost("CrearPublicacion")]
+        public async Task<IActionResult> CrearPublicacion ([FromBody] PublicacionCreacionDTO publicacionCreacionDTO)
+        {
+            if (publicacionCreacionDTO == null)
+                return BadRequest("Error en el payload");
+
+            if(await _usuarioRepositorio.ExisteUsuarioPorId(publicacionCreacionDTO.IdUsuario)==null)
+            {
+                return NotFound("no existe el id usuario");
+            }
+            
+            if(await _publicacionRepositorio.CrearPublicacion(publicacionCreacionDTO)>0)
+            {
+                return Ok(publicacionCreacionDTO);
+            }
+
+            return BadRequest();
+
         }
        
     }
