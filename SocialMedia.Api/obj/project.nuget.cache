@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L7fVI7QjCq2HL7ADebfAe2Fi+0ZGcs5qTcGdoniJzxWnCKEKNYws5ayGfX9MEBHurlu+7iQLS+5f6QQIE94wPg==",
+  "dgSpecHash": "iXcrAVBRl2McY3ql0GKDJNVxb2u1gz+lOVYnxFgGXXQgSttQhwpzZbhrAueZ9jJoN7fw0b03SIwkysuQmZQ95w==",
   "success": true,
-  "projectFilePath": "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Api\\SocialMedia.Api.csproj",
+  "projectFilePath": "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Api\\SocialMedia.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\153131\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\153131\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

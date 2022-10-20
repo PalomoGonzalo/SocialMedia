@@ -34,5 +34,16 @@ namespace SocialMedia.Infraestructura.Repositorios
             return await db.QueryFirstOrDefaultAsync<UsuarioDTO>(query, dp);
 
         }
+
+        public async Task<IEnumerable<UsuarioDTO>> ObtenerUsuario()
+        {
+            using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            string query = $"SELECT * FROM Usuario";
+
+            IEnumerable<UsuarioDTO> usuarios = await db.QueryAsync<UsuarioDTO>(query).ConfigureAwait(false);
+
+            return usuarios;
+
+        }
     }
 }

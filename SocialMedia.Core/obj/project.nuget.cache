@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AhgJCJSzQ1eKvZqMoQgxzOC3Dhh3IDFCMQ56/1SQ1LAkcNiHKH4IKEZjy6OtAgUQ2FNnhEUP9MuwQ/UlSDzf5A==",
+  "dgSpecHash": "OmgUskQRtppxZ3rUTRs6xqN3dIFVntgiGYfLjpnhSwZk3XdGtsGU6v2P0qLkkjRKC6q8Dlhpp5WVOp3lymK4PQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
+  "projectFilePath": "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\153131\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512"
   ],

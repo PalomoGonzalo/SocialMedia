@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj": {}
+    "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj": {}
   },
   "projects": {
-    "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj": {
+    "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
+        "projectUniqueName": "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
         "projectName": "SocialMedia.Core",
-        "projectPath": "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
+        "projectPath": "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
         "packagesPath": "C:\\Users\\153131\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\obj\\",
+        "outputPath": "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\153131\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,14 +64,14 @@
         }
       }
     },
-    "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj": {
+    "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj",
+        "projectUniqueName": "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj",
         "projectName": "SocialMedia.Infraestructura",
-        "projectPath": "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj",
+        "projectPath": "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj",
         "packagesPath": "C:\\Users\\153131\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infraestructura\\obj\\",
+        "outputPath": "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infraestructura\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\153131\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -88,8 +88,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj": {
-                "projectPath": "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj"
+              "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj": {
+                "projectPath": "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj"
               }
             }
           }

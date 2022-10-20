@@ -30,5 +30,17 @@ namespace SocialMedia.Api.Controllers
             return Ok(usuario);
         }
 
+        [HttpGet("obtenerUsuarios")]
+
+        public async Task<IActionResult> OtenerUsuarios()
+        {
+            var listUsuario= await _usuarioRepositorio.ObtenerUsuario();
+            if (listUsuario==null)
+            {
+                return NotFound("no existe el usuario");
+            }
+            return Ok(listUsuario);
+        }
+
     }
 }
