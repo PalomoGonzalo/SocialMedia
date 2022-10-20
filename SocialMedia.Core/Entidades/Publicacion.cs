@@ -14,7 +14,7 @@ namespace SocialMedia.Core.Entidades
         public int IdUsuario { get; set; }
         public DateTime Fecha { get; set; }
         public string Descripcion { get; set; } = null!;
-        public string? Imagen { get; set; }
+        public string Imagen { get; set; }
 
         public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
         public virtual ICollection<Comentario> Comentarios { get; set; }

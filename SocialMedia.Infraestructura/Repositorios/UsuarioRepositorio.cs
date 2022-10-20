@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using SocialMedia.Core.DTOS;
 using SocialMedia.Core.Entidades;
 using SocialMedia.Core.Interfaces;
 using System;
@@ -21,7 +22,7 @@ namespace SocialMedia.Infraestructura.Repositorios
             _config = config;
         }
 
-        public async Task<Usuario> ExisteUsuarioPorId(int id)
+        public async Task<UsuarioDTO> ExisteUsuarioPorId(int id)
         {
             using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
 
@@ -30,7 +31,7 @@ namespace SocialMedia.Infraestructura.Repositorios
             DynamicParameters dp = new DynamicParameters();
             dp.Add("id", id,DbType.Int64);
 
-            return await db.QueryFirstOrDefaultAsync<Usuario>(query, dp);
+            return await db.QueryFirstOrDefaultAsync<UsuarioDTO>(query, dp);
 
         }
     }

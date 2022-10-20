@@ -1,4 +1,5 @@
-﻿using SocialMedia.Core.Entidades;
+﻿using SocialMedia.Core.DTOS;
+using SocialMedia.Core.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace SocialMedia.Core.Interfaces
 {
     public interface IUsuarioRepositorio
     {
-        Task<Usuario> ExisteUsuarioPorId(int id);
+        Task<UsuarioDTO> ExisteUsuarioPorId(int id);
     }
 }

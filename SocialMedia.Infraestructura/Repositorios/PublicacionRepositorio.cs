@@ -67,6 +67,8 @@ namespace SocialMedia.Infraestructura.Repositorios
             dp.Add("descripcion", publicacionCreacionDTO.Descripcion,DbType.String);
             dp.Add("imagen", "null",DbType.String);
 
+
+
             int row = await db.ExecuteAsync(sql, dp);
 
             if(row > 0)
@@ -76,7 +78,7 @@ namespace SocialMedia.Infraestructura.Repositorios
             return -1;
         }
 
-        public async Task<int> ModificarComentarioPublicacion(string comentario, int id)
+        public async Task<int> ModificarDescripcionPublicacion(string comentario, int id)
         {
             using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
             DynamicParameters dp = new DynamicParameters();

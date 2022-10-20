@@ -16,7 +16,7 @@ namespace SocialMedia.Core.Entidades
         public string Apellidos { get; set; } = null!;
         public string Email { get; set; } = null!;
         public DateTime FechaNacimiento { get; set; }
-        public string? Telefono { get; set; }
+        public string Telefono { get; set; }
         public bool Activo { get; set; }
 
         public virtual ICollection<Comentario> Comentarios { get; set; }

@@ -73,20 +73,21 @@ namespace SocialMedia.Api.Controllers
         }
 
 
-        [HttpPut("ModificarComentarioPublicacion/{id}")]
-        public async Task<IActionResult> ModificarComentarioPublicacion([FromBody] string comentarioAModificar,int id)
+        [HttpPut("ModificarDescripcionPublicacion/{id}")]
+        public async Task<IActionResult> ModificarDescripcipDePublicacion([FromBody] string descripcion,int id)
         {
             var publicacion = await _publicacionRepositorio.GetPublicacion(id);
             if (publicacion == null)
             {
                 return NotFound("no existe la publicacion");
             }
-
-
-
-
+            if(await _publicacionRepositorio.ModificarDescripcionPublicacion(descripcion,id)>0)
+            {
+                return Ok($"Se modifico correctamente el comentario");
+            }
+            return BadRequest("No se logro modificar la descripcion");
+            
         }
-
        
     }
 }
