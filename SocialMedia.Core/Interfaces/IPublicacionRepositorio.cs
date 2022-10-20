@@ -13,5 +13,7 @@ namespace SocialMedia.Core.Interfaces
         Task< IEnumerable<PublicacionDTO>> GetPublicaciones();
         Task<PublicacionDTO> GetPublicacion(int id);
         Task<int> CrearPublicacion(PublicacionCreacionDTO publicacionCreacionDTO);
+        Task<int> ModificarComentarioPublicacion(string comentario,int id);
+
     }
 }

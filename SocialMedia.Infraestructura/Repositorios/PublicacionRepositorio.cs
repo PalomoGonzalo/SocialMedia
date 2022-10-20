@@ -67,13 +67,28 @@ namespace SocialMedia.Infraestructura.Repositorios
             dp.Add("descripcion", publicacionCreacionDTO.Descripcion,DbType.String);
             dp.Add("imagen", "null",DbType.String);
 
-           // int row = await db.ExecuteAsync(sql, dp);
+            int row = await db.ExecuteAsync(sql, dp);
 
-          //  if(row > 0)
-            //    return row;
-
+            if(row > 0)
+            {
+                return row;
+            }
             return -1;
+        }
 
+        public async Task<int> ModificarComentarioPublicacion(string comentario, int id)
+        {
+            using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            DynamicParameters dp = new DynamicParameters();
+            string sql = @$"UPDATE Publicacion SET Descripcion = @descripcion WHERE IdPublicacion=@id";
+            dp.Add("descripcion", comentario, DbType.String);
+            dp.Add("id",id,DbType.Int64);
+
+            int row = await db.ExecuteAsync(sql, dp);  
+
+            if(row>0)
+                return row;
+            return -1;
         }
     }
 }

@@ -68,10 +68,25 @@ namespace SocialMedia.Api.Controllers
             {
                 return Ok(publicacionCreacionDTO);
             }
+            
+            return BadRequest("Error al crear la publicacion");
+        }
 
-            return BadRequest();
+
+        [HttpPut("ModificarComentarioPublicacion/{id}")]
+        public async Task<IActionResult> ModificarComentarioPublicacion([FromBody] string comentarioAModificar,int id)
+        {
+            var publicacion = await _publicacionRepositorio.GetPublicacion(id);
+            if (publicacion == null)
+            {
+                return NotFound("no existe la publicacion");
+            }
+
+
+
 
         }
+
        
     }
 }
