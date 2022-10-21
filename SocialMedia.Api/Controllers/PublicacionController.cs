@@ -88,6 +88,14 @@ namespace SocialMedia.Api.Controllers
             return BadRequest("No se logro modificar la descripcion");
             
         }
+
+        [HttpGet("ObtenerCantidadDepubicacionPorUsuario")]
+
+        public async Task<IActionResult> ObtenerCantidadPublicacionPorUsuario()
+        {
+            var lista = await _publicacionRepositorio.ObtenerCantidadDepubicacionesPorUsuario();
+            return Ok(lista);
+        }
        
     }
 }

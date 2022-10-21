@@ -92,5 +92,14 @@ namespace SocialMedia.Infraestructura.Repositorios
                 return row;
             return -1;
         }
+
+        public async Task<IEnumerable<PublicacionCantidadDTO>> ObtenerCantidadDepubicacionesPorUsuario()
+        {
+            using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            string query=@$"SELECT Publicacion.IdUsuario,Usuario.Nombres , count (*) as CantidadDePublicacion FROM Publicacion inner join Usuario on Publicacion.IdUsuario=Usuario.IdUsuario GROUP BY Publicacion.IdUsuario, Usuario.Nombres ORDER BY count(*) DESC";
+            IEnumerable<PublicacionCantidadDTO> lista= await db.QueryAsync<PublicacionCantidadDTO>(query).ConfigureAwait(false);
+            return lista;
+
+        }
     }
 }
