@@ -22,7 +22,7 @@ namespace SocialMedia.Infraestructura.Repositorios
             _config = config;
         }
 
-        public async Task<UsuarioDTO> ExisteUsuarioPorId(int id)
+        public async Task<UsuarioDTO> ObtenerUsuarioPorId(int id)
         {
             using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
 

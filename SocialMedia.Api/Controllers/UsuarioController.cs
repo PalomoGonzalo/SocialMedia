@@ -22,7 +22,7 @@ namespace SocialMedia.Api.Controllers
         [HttpGet("ObtenerUsuarioPorId/{id}")]       
         public async Task<IActionResult> ObtenerUsuarioPorId(int id)
         {
-            var usuario= await _usuarioRepositorio.ExisteUsuarioPorId(id);
+            var usuario= await _usuarioRepositorio.ObtenerUsuarioPorId(id);
             if(usuario==null)
             {
                 return NotFound("No existe el usuario");

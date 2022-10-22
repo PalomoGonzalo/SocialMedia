@@ -15,6 +15,7 @@ namespace SocialMedia.Core.Interfaces
         Task<int> CrearPublicacion(PublicacionCreacionDTO publicacionCreacionDTO);
         Task<int> ModificarDescripcionPublicacion(string comentario,int id);
         Task<IEnumerable<PublicacionCantidadDTO>> ObtenerCantidadDepubicacionesPorUsuario();
+        Task<int> ObtenerCantidadDepubicacionesPorUsuarioID(int id);
 
     }
 }

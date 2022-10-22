@@ -10,6 +10,7 @@ using SocialMedia.Core.Entidades;
 using SocialMedia.Core.Interfaces;
 using SocialMedia.Infraestructura.Repositorios;
 using SocialMedia.Infraestructura.Filtro;
+using static SocialMedia.Core.Enumeraciones.EnumsLib;
 
 namespace SocialMedia.Api.Controllers
 {
@@ -59,9 +60,14 @@ namespace SocialMedia.Api.Controllers
             if (publicacionCreacionDTO == null)
                 return BadRequest("Error en el payload");
 
-            if(await _usuarioRepositorio.ExisteUsuarioPorId(publicacionCreacionDTO.IdUsuario)==null)
+            if(await _usuarioRepositorio.ObtenerUsuarioPorId(publicacionCreacionDTO.IdUsuario)==null)
             {
-                return NotFound("no existe el id usuario");
+                return BadRequest("no existe el id usuario");
+            }
+
+            if(await _publicacionRepositorio.ObtenerCantidadDepubicacionesPorUsuarioID(publicacionCreacionDTO.IdUsuario)>= (int)CantidadPublicaciones.Max)
+            {
+                return BadRequest("Error, numeros de publicaciones superados");
             }
             
             if(await _publicacionRepositorio.CrearPublicacion(publicacionCreacionDTO)>0)
@@ -96,6 +102,15 @@ namespace SocialMedia.Api.Controllers
             var lista = await _publicacionRepositorio.ObtenerCantidadDepubicacionesPorUsuario();
             return Ok(lista);
         }
-       
+
+        [HttpGet("ObtenerCantidadDepubicacionPorUsuarioId/{id}")]
+
+        public async Task<IActionResult> ObtenerCantidadDepubicacionPorUsuarioId(int id)
+        {
+            var cantidad = await _publicacionRepositorio.ObtenerCantidadDepubicacionesPorUsuarioID(id);
+            return Ok(cantidad);
+        }
+
+
     }
 }

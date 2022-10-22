@@ -67,7 +67,10 @@ namespace SocialMedia.Infraestructura.Repositorios
             dp.Add("descripcion", publicacionCreacionDTO.Descripcion,DbType.String);
             dp.Add("imagen", "null",DbType.String);
 
-
+            if(publicacionCreacionDTO.Descripcion.Contains("sex"))
+            {
+                throw new Exception("La descripcion contiene palabras no permitidas");
+            }
 
             int row = await db.ExecuteAsync(sql, dp);
 
@@ -99,6 +102,19 @@ namespace SocialMedia.Infraestructura.Repositorios
             string query=@$"SELECT Publicacion.IdUsuario,Usuario.Nombres , count (*) as CantidadDePublicacion FROM Publicacion inner join Usuario on Publicacion.IdUsuario=Usuario.IdUsuario GROUP BY Publicacion.IdUsuario, Usuario.Nombres ORDER BY count(*) DESC";
             IEnumerable<PublicacionCantidadDTO> lista= await db.QueryAsync<PublicacionCantidadDTO>(query).ConfigureAwait(false);
             return lista;
+
+        }
+
+        public async Task<int> ObtenerCantidadDepubicacionesPorUsuarioID(int id)
+        {
+            using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            string query = @$"SELECT  count (*) as CantidadDePublicacion FROM Publicacion inner join Usuario on Publicacion.IdUsuario=Usuario.IdUsuario
+                                WHERE Publicacion.IdUsuario=@id  and  Publicacion.Fecha > GETDATE()-7 GROUP BY Publicacion.IdUsuario";
+            DynamicParameters dp = new DynamicParameters();
+            dp.Add("id",id,DbType.Int64);
+
+            int cantidad = await db.QuerySingleAsync<int>(query,dp).ConfigureAwait(false);
+            return cantidad;
 
         }
     }

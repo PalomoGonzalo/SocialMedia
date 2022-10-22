@@ -10,7 +10,7 @@ namespace SocialMedia.Core.Interfaces
 {
     public interface IUsuarioRepositorio
     {
-        Task<UsuarioDTO> ExisteUsuarioPorId(int id);
+        Task<UsuarioDTO> ObtenerUsuarioPorId(int id);
         Task<IEnumerable<UsuarioDTO>> ObtenerUsuario();
     }
 }
