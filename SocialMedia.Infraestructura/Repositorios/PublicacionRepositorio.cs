@@ -39,13 +39,18 @@ namespace SocialMedia.Infraestructura.Repositorios
             return publicacion;
         }
 
-        public async Task<IEnumerable<PublicacionDTO>> GetPublicaciones()
+        public async Task<IEnumerable<PublicacionDTO>> GetPublicaciones(int pagina, int cantidadRegistros)
         {
             using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
 
-            string sql = @"SELECT * FROM Publicacion ";
+            string sql = @"exec spPaginacion @pagina, @cantidadRegistros";
 
-            IEnumerable<PublicacionDTO> lista = await db.QueryAsync<PublicacionDTO>(sql).ConfigureAwait(false);
+            DynamicParameters dp = new DynamicParameters();
+
+            dp.Add("pagina",pagina, DbType.Int64);
+            dp.Add("cantidadRegistros",cantidadRegistros, DbType.Int64);
+
+            IEnumerable<PublicacionDTO> lista = await db.QueryAsync<PublicacionDTO>(sql,dp).ConfigureAwait(false);
             
             return lista;
  

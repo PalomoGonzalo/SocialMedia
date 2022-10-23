@@ -1,15 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using SocialMedia.Core.DTOS;
-using SocialMedia.Core.Entidades;
 using SocialMedia.Core.Interfaces;
-using SocialMedia.Infraestructura.Repositorios;
-using SocialMedia.Infraestructura.Filtro;
 using static SocialMedia.Core.Enumeraciones.EnumsLib;
 
 namespace SocialMedia.Api.Controllers
@@ -30,9 +21,9 @@ namespace SocialMedia.Api.Controllers
 
 
         [HttpGet("ObtenerPublicaciones")]
-        public async Task<IActionResult> ObtenerPublicaciones()
+        public async Task<IActionResult> ObtenerPublicaciones(int pagina, int cantidadRegistros)
         {
-            var publicaciones= await _publicacionRepositorio.GetPublicaciones();
+            var publicaciones= await _publicacionRepositorio.GetPublicaciones(pagina, cantidadRegistros);
 
             if(publicaciones==null)
             {
@@ -96,7 +87,6 @@ namespace SocialMedia.Api.Controllers
         }
 
         [HttpGet("ObtenerCantidadDepubicacionPorUsuario")]
-
         public async Task<IActionResult> ObtenerCantidadPublicacionPorUsuario()
         {
             var lista = await _publicacionRepositorio.ObtenerCantidadDepubicacionesPorUsuario();
@@ -104,7 +94,6 @@ namespace SocialMedia.Api.Controllers
         }
 
         [HttpGet("ObtenerCantidadDepubicacionPorUsuarioId/{id}")]
-
         public async Task<IActionResult> ObtenerCantidadDepubicacionPorUsuarioId(int id)
         {
             var cantidad = await _publicacionRepositorio.ObtenerCantidadDepubicacionesPorUsuarioID(id);

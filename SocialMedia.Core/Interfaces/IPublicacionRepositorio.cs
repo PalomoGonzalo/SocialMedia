@@ -10,7 +10,7 @@ namespace SocialMedia.Core.Interfaces
 {
     public interface IPublicacionRepositorio
     {
-        Task< IEnumerable<PublicacionDTO>> GetPublicaciones();
+        Task< IEnumerable<PublicacionDTO>> GetPublicaciones(int pagina, int cantidadRegistros);
         Task<PublicacionDTO> GetPublicacion(int id);
         Task<int> CrearPublicacion(PublicacionCreacionDTO publicacionCreacionDTO);
         Task<int> ModificarDescripcionPublicacion(string comentario,int id);
