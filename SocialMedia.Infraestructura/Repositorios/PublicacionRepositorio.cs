@@ -49,6 +49,7 @@ namespace SocialMedia.Infraestructura.Repositorios
 
             dp.Add("pagina",pagina, DbType.Int64);
             dp.Add("cantidadRegistros",cantidadRegistros, DbType.Int64);
+           
 
             IEnumerable<PublicacionDTO> lista = await db.QueryAsync<PublicacionDTO>(sql,dp).ConfigureAwait(false);
             
@@ -120,6 +121,18 @@ namespace SocialMedia.Infraestructura.Repositorios
 
             int cantidad = await db.QuerySingleAsync<int>(query,dp).ConfigureAwait(false);
             return cantidad;
+
+        }
+
+        public async Task<int> ObtenerCantidadDePaginas(int cantidadRegistros)
+        {
+            using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            string query = @$"SELECT COUNT(*)/@cantidadRegistros as cantidadDePaginas FROM Publicacion";
+            DynamicParameters dp = new DynamicParameters();
+            dp.Add("cantidadRegistros", cantidadRegistros, DbType.Int64);
+            int cantidad = await db.QuerySingleAsync<int>(query, dp).ConfigureAwait(false);
+            return cantidad;
+
 
         }
     }

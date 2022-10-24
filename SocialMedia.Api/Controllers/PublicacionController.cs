@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using SocialMedia.Core.DTOS;
 using SocialMedia.Core.Interfaces;
 using static SocialMedia.Core.Enumeraciones.EnumsLib;
@@ -29,6 +30,9 @@ namespace SocialMedia.Api.Controllers
             {
                 return NotFound("No existe publicaciones");  
             }
+            var cantidadDePaginasTotales= await _publicacionRepositorio.ObtenerCantidadDePaginas(cantidadRegistros);
+
+            Response.Headers.Add("CantidadDePaginas", JsonConvert.SerializeObject(cantidadDePaginasTotales));
             
             return Ok(publicaciones);
         }
