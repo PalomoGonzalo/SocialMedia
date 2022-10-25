@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SocialMedia.Core.DTOS;
@@ -6,6 +7,7 @@ using static SocialMedia.Core.Enumeraciones.EnumsLib;
 
 namespace SocialMedia.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class PublicacionController : ControllerBase

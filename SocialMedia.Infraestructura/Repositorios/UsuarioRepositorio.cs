@@ -1,13 +1,16 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using SocialMedia.Core.DTOS;
 using SocialMedia.Core.Entidades;
 using SocialMedia.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -44,6 +47,24 @@ namespace SocialMedia.Infraestructura.Repositorios
 
             return usuarios;
 
+        }
+
+
+        public String GenerarToken(UserLogin usuario)
+        {
+            JwtSecurityTokenHandler tokenhandler = new JwtSecurityTokenHandler();
+
+            SecurityTokenDescriptor tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[] { new Claim("id", usuario.Usuario.ToString()) }),
+                Expires = DateTime.UtcNow.AddHours(24),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Authentication:SecretKey"])), SecurityAlgorithms.HmacSha256)
+            };
+
+            SecurityToken token = tokenhandler.CreateToken(tokenDescriptor);
+            String encodeJwt = tokenhandler.WriteToken(token);
+
+            return encodeJwt;
         }
     }
 }

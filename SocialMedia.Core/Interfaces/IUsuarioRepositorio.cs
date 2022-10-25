@@ -10,7 +10,10 @@ namespace SocialMedia.Core.Interfaces
 {
     public interface IUsuarioRepositorio
     {
+
+
         Task<UsuarioDTO> ObtenerUsuarioPorId(int id);
         Task<IEnumerable<UsuarioDTO>> ObtenerUsuario();
+        String GenerarToken(UserLogin usuario);
     }
 }

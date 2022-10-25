@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SocialMedia.Core.DTOS;
 using SocialMedia.Core.Interfaces;
 
 namespace SocialMedia.Api.Controllers
@@ -30,8 +32,8 @@ namespace SocialMedia.Api.Controllers
             return Ok(usuario);
         }
 
+        [Authorize]
         [HttpGet("obtenerUsuarios")]
-
         public async Task<IActionResult> OtenerUsuarios()
         {
             var listUsuario= await _usuarioRepositorio.ObtenerUsuario();
@@ -40,6 +42,15 @@ namespace SocialMedia.Api.Controllers
                 return NotFound("no existe el usuario");
             }
             return Ok(listUsuario);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login([FromBody] UserLogin user )
+        {
+            if (user == null)
+                return BadRequest("Error datos no validos");
+            string token= _usuarioRepositorio.GenerarToken(user);
+            return Ok (token);
         }
 
     }
