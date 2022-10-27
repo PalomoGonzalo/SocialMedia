@@ -45,6 +45,18 @@ builder.Services.AddSwaggerGen(c =>
 
 });
 
+
+builder.Services.AddCors(x => x.AddPolicy("EnableCors", builder => {
+    builder.SetIsOriginAllowedToAllowWildcardSubdomains()
+            .AllowAnyOrigin()
+            //.WithOrigins("https://codestack.com")
+            .AllowAnyMethod()
+            //.WithMethods("PATCH", "DELETE", "GET", "HEADER")
+            .AllowAnyHeader();
+    //.WithHeaders("X-Token", "content-type")
+}));
+
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -74,15 +86,20 @@ builder.Services.AddMvc(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+
+
+app.UseSwagger();
+app.UseSwaggerUI(options=>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    options.SwaggerEndpoint("../swagger/v1/swagger.json", "Social Media API V1");
+});
 
 app.UseHttpsRedirection();
 
+app.UseCors("EnableCors");
+
 app.UseAuthentication();
+
 
 app.UseAuthorization();
 

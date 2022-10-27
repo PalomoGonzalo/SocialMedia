@@ -1,0 +1,30 @@
+matias
+SocialMedia.1
+SocialMedia.1
+
+
+USE [SocialMedia]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spPaginacion]    Script Date: 26/10/2022 23:04:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure [dbo].[spPaginacion](
+@pagina int,
+@CantidadReg int)
+as
+
+begin
+DECLARE @SkipReG int = @pagina*@CantidadReg
+
+SELECT * FROM Publicacion
+ORDER BY IdPublicacion
+OFFSET @SkipReG ROW
+FETCH NEXT @CantidadReg ROWS ONLY
+
+end
+GO
