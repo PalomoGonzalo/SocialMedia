@@ -413,24 +413,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mati_\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\153131\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
+      "projectUniqueName": "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
       "projectName": "SocialMedia.Core",
-      "projectPath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
-      "packagesPath": "C:\\Users\\mati_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Core\\obj\\",
+      "projectPath": "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
+      "packagesPath": "C:\\Users\\153131\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\mati_\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\153131\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -480,7 +475,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

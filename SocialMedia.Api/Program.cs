@@ -75,6 +75,7 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddScoped<IPublicacionRepositorio, PublicacionRepositorio>();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+builder.Services.AddScoped<ISeguridadRepositorio, SeguridadRepositorio>();
 
 builder.Services.AddMvc(options =>
 {

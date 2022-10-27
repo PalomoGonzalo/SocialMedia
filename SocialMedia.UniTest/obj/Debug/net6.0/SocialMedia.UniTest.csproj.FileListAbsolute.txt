@@ -197,3 +197,10 @@ c:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.UniTest\obj\Debug\
 c:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.UniTest\obj\Debug\net6.0\SocialMedia.UniTest.pdb
 c:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.UniTest\obj\Debug\net6.0\SocialMedia.UniTest.genruntimeconfig.cache
 c:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.UniTest\obj\Debug\net6.0\ref\SocialMedia.UniTest.dll
+c:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.UniTest\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+c:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.UniTest\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+c:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.UniTest\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+c:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.UniTest\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+c:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.UniTest\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+c:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.UniTest\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+c:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.UniTest\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

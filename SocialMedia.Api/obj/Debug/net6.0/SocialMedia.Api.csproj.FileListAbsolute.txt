@@ -140,3 +140,5 @@ C:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.Api\obj\Debug\net6
 C:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.Api\obj\Debug\net6.0\ref\SocialMedia.Api.dll
 C:\Users\mati_\Desktop\SocialMedia\SocialMedia.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\mati_\Desktop\SocialMedia\SocialMedia.Api\bin\Debug\net6.0\web.config
+C:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.Api\bin\Debug\net6.0\web.config
+C:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

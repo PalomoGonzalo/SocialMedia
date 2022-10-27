@@ -12,5 +12,11 @@ namespace SocialMedia.Core.Enumeraciones
         {
             Max=10
         }
+
+        public enum RolType
+        {
+            Administrador,
+            Consumidor
+        }
     }
 }

@@ -14,6 +14,6 @@ namespace SocialMedia.Core.Interfaces
 
         Task<UsuarioDTO> ObtenerUsuarioPorId(int id);
         Task<IEnumerable<UsuarioDTO>> ObtenerUsuario();
-        String GenerarToken(UserLogin usuario);
+        String GenerarToken(SeguridadDTO seguridad);
     }
 }

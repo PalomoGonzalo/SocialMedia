@@ -50,13 +50,13 @@ namespace SocialMedia.Infraestructura.Repositorios
         }
 
 
-        public String GenerarToken(UserLogin usuario)
+        public String GenerarToken(SeguridadDTO seguridad)
         {
             JwtSecurityTokenHandler tokenhandler = new JwtSecurityTokenHandler();
 
             SecurityTokenDescriptor tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("id", usuario.Usuario.ToString()) }),
+                Subject = new ClaimsIdentity(new[] { new Claim("usuario", seguridad.Usuario.ToString()) }),
                 Expires = DateTime.UtcNow.AddHours(24),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Authentication:SecretKey"])), SecurityAlgorithms.HmacSha256)
             };
