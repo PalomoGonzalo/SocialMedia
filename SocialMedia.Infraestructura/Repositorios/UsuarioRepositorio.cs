@@ -57,7 +57,7 @@ namespace SocialMedia.Infraestructura.Repositorios
             SecurityTokenDescriptor tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[] { new Claim("usuario", seguridad.Usuario.ToString()) }),
-                Expires = DateTime.UtcNow.AddHours(24),
+                Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Authentication:SecretKey"])), SecurityAlgorithms.HmacSha256)
             };
 

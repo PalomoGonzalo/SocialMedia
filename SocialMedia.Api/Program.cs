@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SocialMedia.Core.Interfaces;
 using SocialMedia.Infraestructura.Filtro;
+using SocialMedia.Infraestructura.Options;
 using SocialMedia.Infraestructura.Repositorios;
 using System.Text;
 
@@ -72,6 +73,9 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Authentication:SecretKey"]))
     };
 });
+
+builder.Services.Configure<PasswordOptions>(builder.Configuration.GetSection("PasswordOptions"));
+
 
 builder.Services.AddScoped<IPublicacionRepositorio, PublicacionRepositorio>();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();

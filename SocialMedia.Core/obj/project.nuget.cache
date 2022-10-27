@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uCS2H2HTz221W9f3GHmZqKlLVUsxA4ry3XvCumHV9UZqFg82aMhojsW3CniIN4MJoFqdAVN+GF1IDNnv4WffFA==",
+  "dgSpecHash": "DLNj5l4Re5c/p0t1cm906V9OBO/DZ5BpU8LiCwevzm2Jthu9XwkvgrCKIduCBfUYGpDxCJBALpZkeQf3/5L4Yw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
+  "projectFilePath": "c:\\Users\\153131\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\153131\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\153131\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.10\\microsoft.aspnetcore.authentication.jwtbearer.6.0.10.nupkg.sha512",
