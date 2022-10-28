@@ -11,17 +11,23 @@ namespace SocialMedia.Infraestructura.Repositorios
     {
         private readonly IConfiguration _config;
         private readonly IUsuarioRepositorio _user;
+       
 
-        public SeguridadRepositorio(IConfiguration config, IUsuarioRepositorio user)
+        private readonly IPasswordHasherRepositorio _passwordHash;
+
+        public SeguridadRepositorio(IConfiguration config, IUsuarioRepositorio user, IPasswordHasherRepositorio passwordHash)
         {
             _user = user;
             _config = config;
+            _passwordHash = passwordHash;
         }
 
         public async Task<SeguridadDTO> CrearUsuarioSeguridad(SeguridadDTO seguridadDTO)
         {
             if (seguridadDTO == null)
                 throw new ArgumentNullException();
+            
+            var passHash=_passwordHash.Hash(seguridadDTO.Contraseña);
 
             using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
 
@@ -31,7 +37,7 @@ namespace SocialMedia.Infraestructura.Repositorios
             DynamicParameters dp = new DynamicParameters();
             dp.Add("usuario", seguridadDTO.Usuario, DbType.String);
             dp.Add("nombreUsuario", seguridadDTO.NombreUsuario, DbType.String);
-            dp.Add("contraseña", seguridadDTO.Password, DbType.String);
+            dp.Add("contraseña", passHash, DbType.String);
             dp.Add("rol", seguridadDTO.Rol, DbType.Int64);
 
 
@@ -49,11 +55,10 @@ namespace SocialMedia.Infraestructura.Repositorios
         {
             using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
 
-            string query = $@"SELECT * FROM Seguridad WHERE Usuario=@user and Contraseña=@password";
+            string query = $@"SELECT * FROM Seguridad WHERE Usuario=@user";
 
             DynamicParameters dp = new DynamicParameters();
             dp.Add("user", user.Usuario, DbType.String);
-            dp.Add("password", user.Password, DbType.String);
 
             return await db.QueryFirstOrDefaultAsync<SeguridadDTO>(query, dp);
 
@@ -72,11 +77,16 @@ namespace SocialMedia.Infraestructura.Repositorios
         }
 
 
-        public async Task <string> Autenticacion(UserLogin user)
+        public async Task<string> Autenticacion(UserLogin user)
         {
             SeguridadDTO seguridadUser = await ObtenerUsuarioSeguridad(user);
 
             if (seguridadUser == null)
+            {
+                return null;
+            }
+            
+            if(!(_passwordHash.CheckHash(seguridadUser.Contraseña, user.Password)))
             {
                 return null;
             }

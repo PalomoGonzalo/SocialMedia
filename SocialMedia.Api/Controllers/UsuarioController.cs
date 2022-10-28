@@ -54,7 +54,7 @@ namespace SocialMedia.Api.Controllers
             var token = await _seguridad.Autenticacion(user);
             if (token == null)
             {
-                return BadRequest("error el usuario no existe");
+                return BadRequest("error en el usuario o contraseña ");
             }
             
             return Ok(token);

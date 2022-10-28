@@ -74,12 +74,18 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.Configure<PasswordOptions>(builder.Configuration.GetSection("PasswordOptions"));
+var section = builder.Configuration.GetSection("PassOptions");
+builder.Services.Configure<PassOptions>(section);
 
 
 builder.Services.AddScoped<IPublicacionRepositorio, PublicacionRepositorio>();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 builder.Services.AddScoped<ISeguridadRepositorio, SeguridadRepositorio>();
+builder.Services.AddTransient<IPasswordHasherRepositorio, PasswordHaserRepositorio>();
+
+
+
+
 
 builder.Services.AddMvc(options =>
 {

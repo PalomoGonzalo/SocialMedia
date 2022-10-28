@@ -128,8 +128,10 @@ namespace SocialMedia.Infraestructura.Repositorios
         {
             using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
             string query = @$"SELECT COUNT(*)/@cantidadRegistros as cantidadDePaginas FROM Publicacion";
+
             DynamicParameters dp = new DynamicParameters();
             dp.Add("cantidadRegistros", cantidadRegistros, DbType.Int64);
+
             int cantidad = await db.QuerySingleAsync<int>(query, dp).ConfigureAwait(false);
             return cantidad;
 
