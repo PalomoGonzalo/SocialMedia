@@ -46,7 +46,7 @@ namespace SocialMedia.Infraestructura.Repositorios
 
             if (row ==0)
             {
-                 throw new Exception("No se logro crear correctamente el");
+                 throw new Exception("No se logro crear correctamente el usuario");
             }
             return seguridadDTO;
         }

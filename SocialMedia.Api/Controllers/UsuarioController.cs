@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SocialMedia.Core.DTOS;
 using SocialMedia.Core.Interfaces;
+using static SocialMedia.Core.Enumeraciones.EnumsLib;
 
 namespace SocialMedia.Api.Controllers
 {
@@ -15,11 +16,13 @@ namespace SocialMedia.Api.Controllers
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
         private readonly ISeguridadRepositorio _seguridad;
-        public UsuarioController(IUsuarioRepositorio usuarioRepositorio, ISeguridadRepositorio seguridad)
+        private readonly ILlavesRepositorio _llave;
+
+        public UsuarioController(IUsuarioRepositorio usuarioRepositorio, ISeguridadRepositorio seguridad, ILlavesRepositorio llave)
         {
             this._seguridad = seguridad;
             this._usuarioRepositorio = usuarioRepositorio;
-
+            _llave = llave;
         }
 
 
@@ -54,7 +57,7 @@ namespace SocialMedia.Api.Controllers
             var token = await _seguridad.Autenticacion(user);
             if (token == null)
             {
-                return BadRequest("error en el usuario o contraseña ");
+                return BadRequest("error en el usuario o contraseï¿½a ");
             }
             
             return Ok(token);
@@ -75,7 +78,16 @@ namespace SocialMedia.Api.Controllers
                 return BadRequest("Error, usuario ya existe");
             }
             var usuarioCreado = await _seguridad.CrearUsuarioSeguridad(seguridad);
-            return Ok();
+
+            if(usuarioCreado!=null)
+            {
+                await _llave.CrearLLave(usuarioCreado.Usuario,TipoLlave.Gratuita);
+                return Ok();
+            }
+
+            return BadRequest("Error al crear un usuario");
+
+            
             //return Ok($"usuario : {usuarioCreado.Usuario} creado correctamente");
         }
     }

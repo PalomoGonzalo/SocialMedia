@@ -82,6 +82,7 @@ builder.Services.AddScoped<IPublicacionRepositorio, PublicacionRepositorio>();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 builder.Services.AddScoped<ISeguridadRepositorio, SeguridadRepositorio>();
 builder.Services.AddTransient<IPasswordHasherRepositorio, PasswordHaserRepositorio>();
+builder.Services.AddScoped<ILlavesRepositorio, LlavesRepositorio>();
 
 
 

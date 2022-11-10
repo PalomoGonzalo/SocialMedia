@@ -18,5 +18,11 @@ namespace SocialMedia.Core.Enumeraciones
             Administrador,
             Consumidor
         }
+
+        public enum TipoLlave
+        {
+            Gratuita = 1,
+            Profesional = 2
+        }
     }
 }
