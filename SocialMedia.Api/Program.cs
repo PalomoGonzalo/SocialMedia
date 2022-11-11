@@ -1,3 +1,5 @@
+using System.Collections.Immutable;
+using AspNetCoreRateLimit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -47,7 +49,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-builder.Services.AddCors(x => x.AddPolicy("EnableCors", builder => {
+builder.Services.AddCors(x => x.AddPolicy("EnableCors", builder =>
+{
     builder.SetIsOriginAllowedToAllowWildcardSubdomains()
             .AllowAnyOrigin()
             //.WithOrigins("https://codestack.com")
@@ -81,6 +84,29 @@ builder.Services.Configure<PassOptions>(section);
 
 
 builder.Services.AddHealthChecks();
+///RateLimit Services
+builder.Services.AddOptions();
+
+// needed to store rate limit counters and ip rules
+builder.Services.AddMemoryCache();
+
+//load general configuration from appsettings.json
+builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
+
+//load ip rules from appsettings.json
+builder.Services.Configure<IpRateLimitPolicies>(builder.Configuration.GetSection("IpRateLimitPolicies"));
+
+// inject counter and rules stores
+builder.Services.AddInMemoryRateLimiting();
+//services.AddDistributedRateLimiting<AsyncKeyLockProcessingStrategy>();
+//services.AddDistributedRateLimiting<RedisProcessingStrategy>();
+//services.AddRedisRateLimiting();
+
+// Add framework services.
+
+
+// configuration (resolvers, counter key builders)
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
 builder.Services.AddScoped<IPublicacionRepositorio, PublicacionRepositorio>();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
@@ -104,13 +130,15 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
 
+app.UseIpRateLimiting();
+
 app.UseSwagger();
-app.UseSwaggerUI(options=>
+app.UseSwaggerUI(options =>
 {
     options.SwaggerEndpoint("../swagger/v1/swagger.json", "Social Media API V1");
 });
 
-app.MapHealthChecks(pattern:"/health");
+app.MapHealthChecks(pattern: "/health");
 
 app.UseHttpsRedirection();
 

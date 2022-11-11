@@ -142,3 +142,5 @@ C:\Users\mati_\Desktop\SocialMedia\SocialMedia.Api\bin\Debug\net6.0\Microsoft.As
 C:\Users\mati_\Desktop\SocialMedia\SocialMedia.Api\bin\Debug\net6.0\web.config
 C:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.Api\bin\Debug\net6.0\web.config
 C:\Users\153131\Documents\SocialMedia\SocialMedia\SocialMedia.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\mati_\Desktop\SocialMedia\SocialMedia.Api\bin\Debug\net6.0\AspNetCoreRateLimit.dll
+C:\Users\mati_\Desktop\SocialMedia\SocialMedia.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
