@@ -34,7 +34,9 @@ namespace SocialMedia.Infraestructura.Repositorios
             DynamicParameters dp = new DynamicParameters();
             dp.Add("id", id,DbType.Int64);
 
-            return await db.QueryFirstOrDefaultAsync<UsuarioDTO>(query, dp);
+            var user= await db.QueryFirstOrDefaultAsync<UsuarioDTO>(query, dp);
+
+            return user;
 
         }
 
@@ -56,7 +58,7 @@ namespace SocialMedia.Infraestructura.Repositorios
 
             SecurityTokenDescriptor tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("usuario", seguridad.Usuario.ToString()) }),
+                Subject = new ClaimsIdentity(new[] { new Claim("usuario", seguridad.IdUsuario.ToString()) }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Authentication:SecretKey"])), SecurityAlgorithms.HmacSha256)
             };

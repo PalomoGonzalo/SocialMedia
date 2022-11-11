@@ -31,11 +31,11 @@ namespace SocialMedia.Infraestructura.Repositorios
 
             using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
 
-            string sql = @"INSERT INTO Seguridad (Usuario,NombreUsuario,Contraseña,Rol)
+            string sql = @"INSERT INTO Seguridad (IdUsuario,NombreUsuario,Contraseña,Rol)
                             VALUES(@usuario,@nombreUsuario,@contraseña,@rol)";
 
             DynamicParameters dp = new DynamicParameters();
-            dp.Add("usuario", seguridadDTO.Usuario, DbType.String);
+            dp.Add("usuario", seguridadDTO.IdUsuario, DbType.Int32);
             dp.Add("nombreUsuario", seguridadDTO.NombreUsuario, DbType.String);
             dp.Add("contraseña", passHash, DbType.String);
             dp.Add("rol", seguridadDTO.Rol, DbType.Int64);
@@ -55,10 +55,10 @@ namespace SocialMedia.Infraestructura.Repositorios
         {
             using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
 
-            string query = $@"SELECT * FROM Seguridad WHERE Usuario=@user";
+            string query = $@"SELECT * FROM Seguridad WHERE IdUsuario=@user";
 
             DynamicParameters dp = new DynamicParameters();
-            dp.Add("user", user.Usuario, DbType.String);
+            dp.Add("user", user.IdUsuario, DbType.Int32);
 
             return await db.QueryFirstOrDefaultAsync<SeguridadDTO>(query, dp);
 
@@ -68,9 +68,9 @@ namespace SocialMedia.Infraestructura.Repositorios
         {
             using IDbConnection db = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
 
-            string query = $@"SELECT * FROM Seguridad WHERE Usuario = @user";
+            string query = $@"SELECT * FROM Seguridad WHERE IdUsuario = @user";
             DynamicParameters dp = new DynamicParameters();
-            dp.Add("user",seguridad.Usuario,DbType.String);
+            dp.Add("user",seguridad.IdUsuario,DbType.Int32);
             return await db.QueryFirstOrDefaultAsync<SeguridadDTO>(query,dp).ConfigureAwait(false);
 
 

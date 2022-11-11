@@ -12,6 +12,6 @@ namespace SocialMedia.Core.DTOS
         public string Llave { get; set; }
         public TipoLlave TipoLlave { get; set; }
         public bool Activo { get; set; }    
-        public string Usuario { get; set; }
+        public int Usuario { get; set; }
     }
 }

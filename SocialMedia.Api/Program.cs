@@ -75,8 +75,12 @@ builder.Services.AddAuthentication(options =>
 });
 
 var section = builder.Configuration.GetSection("PassOptions");
+
+
 builder.Services.Configure<PassOptions>(section);
 
+
+builder.Services.AddHealthChecks();
 
 builder.Services.AddScoped<IPublicacionRepositorio, PublicacionRepositorio>();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
@@ -105,6 +109,8 @@ app.UseSwaggerUI(options=>
 {
     options.SwaggerEndpoint("../swagger/v1/swagger.json", "Social Media API V1");
 });
+
+app.MapHealthChecks(pattern:"/health");
 
 app.UseHttpsRedirection();
 

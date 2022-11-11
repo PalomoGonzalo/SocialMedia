@@ -72,16 +72,22 @@ namespace SocialMedia.Api.Controllers
                 return BadRequest("Error en el payload");
             }
 
+            var usuario = await _usuarioRepositorio.ObtenerUsuarioPorId(seguridad.IdUsuario);
+            if(usuario == null)
+            {
+                return BadRequest("No existe el usuario en el sistema");
+            }
+
             var existeUsuario= _seguridad.GetUsuarioSeguridad(seguridad);
             if(existeUsuario==null)
             {
-                return BadRequest("Error, usuario ya existe");
+                return BadRequest("Error, usuario ya existe en este servicio");
             }
             var usuarioCreado = await _seguridad.CrearUsuarioSeguridad(seguridad);
 
             if(usuarioCreado!=null)
             {
-                await _llave.CrearLLave(usuarioCreado.Usuario,TipoLlave.Gratuita);
+                await _llave.CrearLLave(usuarioCreado.IdUsuario,TipoLlave.Gratuita);
                 return Ok();
             }
 

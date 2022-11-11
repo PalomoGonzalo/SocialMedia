@@ -21,7 +21,7 @@ namespace SocialMedia.Infraestructura.Repositorios
             _config = config;
         }
 
-        public async Task CrearLLave(string usuario, EnumsLib.TipoLlave tipoLLave)
+        public async Task CrearLLave(int usuario, EnumsLib.TipoLlave tipoLLave)
         {
             
             var llave = Guid.NewGuid().ToString().Replace("-","");
@@ -51,7 +51,7 @@ namespace SocialMedia.Infraestructura.Repositorios
             {
                  throw new Exception("No se logro crear correctamente el");
             }
-            
+
 
 
             

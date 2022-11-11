@@ -8,7 +8,7 @@ namespace SocialMedia.Core.DTOS
 {
     public class UserLogin
     {
-        public string Usuario { get; set; }
+        public int IdUsuario { get; set; }
         public string Password { get; set; }
     }
 }

@@ -9,8 +9,6 @@ namespace SocialMedia.Core.Interfaces
 {
     public interface ILlavesRepositorio
     {
-        Task CrearLLave(string usuario,TipoLlave tipoLLave);
-
-       
+        Task CrearLLave(int usuario,TipoLlave tipoLLave);  
     }
 }
