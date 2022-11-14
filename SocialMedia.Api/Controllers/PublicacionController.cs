@@ -1,3 +1,4 @@
+using System.Reflection;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -113,8 +114,9 @@ namespace SocialMedia.Api.Controllers
             Usuario user = new Usuario();
             user.Apellidos = "matias";
             user.Nombres = "Gonzalo";
+            var test = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 
-            return Ok($"{user.Nombres} and {user.Apellidos}");
+            return Ok($"{user.Nombres} and {user.Apellidos}, usando json {test}");
 
 
         }

@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Collections.Immutable;
 using AspNetCoreRateLimit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -12,13 +13,14 @@ using System.Net;
 using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var path= $@"C:\Users\153131\AppData\Roaming\Microsoft\UserSecrets\3b75afd6-b244-402f-b20e-fcfae64c3ab2\";
 builder.WebHost.ConfigureAppConfiguration((hostingContext, config) =>
     {
         var env = hostingContext.HostingEnvironment;
+        
 
-        config.SetBasePath(env.ContentRootPath)
-            .AddJsonFile("Secrets.json", optional: true, reloadOnChange: true);
+        config.SetBasePath(path)//Path.GetDirectoryName(Assembly.GetEntryAssembly().Location))
+            .AddJsonFile("secrets.json", optional: false, reloadOnChange: true);
 
     });
 
@@ -31,6 +33,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 // config heroku 
+/*
 var port = Environment.GetEnvironmentVariable("PORT") ?? "3000";
 
 builder.WebHost.UseKestrel()
@@ -43,7 +46,7 @@ builder.WebHost.UseKestrel()
         
     });
 
-
+*/
 
 builder.Services.AddSwaggerGen(c =>
 {
