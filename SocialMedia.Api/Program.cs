@@ -8,14 +8,43 @@ using SocialMedia.Infraestructura.Filtro;
 using SocialMedia.Infraestructura.Options;
 using SocialMedia.Infraestructura.Repositorios;
 using System.Text;
+using System.Net;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.WebHost.ConfigureAppConfiguration((hostingContext, config) =>
+    {
+        var env = hostingContext.HostingEnvironment;
+
+        config.SetBasePath(env.ContentRootPath)
+            .AddJsonFile("Secrets.json", optional: true, reloadOnChange: true);
+
+    });
+
+
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+// config heroku 
+var port = Environment.GetEnvironmentVariable("PORT") ?? "3000";
+
+builder.WebHost.UseKestrel()
+    .ConfigureKestrel((context,options)=>
+    {
+        options.Listen(IPAddress.Any, Int32.Parse(port),listenOptions=>
+        {
+
+        });
+        
+    });
+
+
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "SocialMedia_APi", Version = "v1" });
@@ -60,6 +89,8 @@ builder.Services.AddCors(x => x.AddPolicy("EnableCors", builder =>
     //.WithHeaders("X-Token", "content-type")
 }));
 
+var pass= builder.Configuration["Authentication:SecretKey"];
+
 
 builder.Services.AddAuthentication(options =>
 {
@@ -73,7 +104,7 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = false,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Authentication:SecretKey"]))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(pass))
     };
 });
 

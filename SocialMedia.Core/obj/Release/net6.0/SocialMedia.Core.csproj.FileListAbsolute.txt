@@ -1,0 +1,12 @@
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/bin/Release/net6.0/SocialMedia.Core.deps.json
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/bin/Release/net6.0/SocialMedia.Core.dll
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/bin/Release/net6.0/ref/SocialMedia.Core.dll
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/bin/Release/net6.0/SocialMedia.Core.pdb
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/obj/Release/net6.0/SocialMedia.Core.csproj.AssemblyReference.cache
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/obj/Release/net6.0/SocialMedia.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/obj/Release/net6.0/SocialMedia.Core.AssemblyInfoInputs.cache
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/obj/Release/net6.0/SocialMedia.Core.AssemblyInfo.cs
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/obj/Release/net6.0/SocialMedia.Core.csproj.CoreCompileInputs.cache
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/obj/Release/net6.0/SocialMedia.Core.dll
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/obj/Release/net6.0/ref/SocialMedia.Core.dll
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/obj/Release/net6.0/SocialMedia.Core.pdb

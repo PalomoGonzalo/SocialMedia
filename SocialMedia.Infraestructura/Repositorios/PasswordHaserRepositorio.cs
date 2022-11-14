@@ -17,13 +17,20 @@ namespace SocialMedia.Infraestructura.Repositorios
 
         public bool CheckHash(string hash, string password)
         {
-            var parts = hash.Split('.',3);
-            if (parts.Length!=3)
+
+            if (String.IsNullOrEmpty(password))
+                throw new ArgumentException(nameof(password));
+
+            if (String.IsNullOrEmpty(hash))
+                throw new ArgumentException(nameof(hash));
+
+            var parts = hash.Split('.', 3);
+            if (parts.Length != 3)
             {
                 throw new FormatException("Inesperado formato de has");
             }
 
-            var iteraciones = Convert.ToInt32(parts[0]) ;
+            var iteraciones = Convert.ToInt32(parts[0]);
             var salt = Convert.FromBase64String(parts[1]);
             var key = Convert.FromBase64String(parts[2]);
 
@@ -43,6 +50,8 @@ namespace SocialMedia.Infraestructura.Repositorios
 
         public string Hash(string password)
         {
+            if (String.IsNullOrEmpty(password))
+                throw new ArgumentException(nameof(password));
 
             //PBKDF2 IMPLEMENTACION
             using (var algorithm = new Rfc2898DeriveBytes(

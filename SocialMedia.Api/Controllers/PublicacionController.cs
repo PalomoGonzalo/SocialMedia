@@ -2,12 +2,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SocialMedia.Core.DTOS;
+using SocialMedia.Core.Entidades;
 using SocialMedia.Core.Interfaces;
 using static SocialMedia.Core.Enumeraciones.EnumsLib;
 
 namespace SocialMedia.Api.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class PublicacionController : ControllerBase
@@ -105,6 +105,21 @@ namespace SocialMedia.Api.Controllers
             var cantidad = await _publicacionRepositorio.ObtenerCantidadDepubicacionesPorUsuarioID(id);
             return Ok(cantidad);
         }
+
+        [HttpGet("Test")]
+
+        public IActionResult Test()
+        {
+            Usuario user = new Usuario();
+            user.Apellidos = "matias";
+            user.Nombres = "Gonzalo";
+
+            return Ok($"{user.Nombres} and {user.Apellidos}");
+
+
+        }
+
+
 
 
     }

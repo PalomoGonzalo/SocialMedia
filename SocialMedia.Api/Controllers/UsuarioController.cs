@@ -85,13 +85,7 @@ namespace SocialMedia.Api.Controllers
             }
             var usuarioCreado = await _seguridad.CrearUsuarioSeguridad(seguridad);
 
-            if(usuarioCreado!=null)
-            {
-                await _llave.CrearLLave(usuarioCreado.IdUsuario,TipoLlave.Gratuita);
-                return Ok();
-            }
-
-            return BadRequest("Error al crear un usuario");
+            return Ok($"se creo correctamente el usuario {usuarioCreado.IdUsuario}");
 
             
             //return Ok($"usuario : {usuarioCreado.Usuario} creado correctamente");

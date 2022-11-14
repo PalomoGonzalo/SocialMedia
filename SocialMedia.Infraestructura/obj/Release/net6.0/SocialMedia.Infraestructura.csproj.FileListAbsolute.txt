@@ -1,0 +1,17 @@
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/bin/Release/net6.0/SocialMedia.Infraestructura.deps.json
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/bin/Release/net6.0/SocialMedia.Infraestructura.runtimeconfig.json
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/bin/Release/net6.0/SocialMedia.Infraestructura.dll
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/bin/Release/net6.0/ref/SocialMedia.Infraestructura.dll
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/bin/Release/net6.0/SocialMedia.Infraestructura.pdb
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/bin/Release/net6.0/SocialMedia.Core.dll
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/bin/Release/net6.0/SocialMedia.Core.pdb
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/obj/Release/net6.0/SocialMedia.Infraestructura.csproj.AssemblyReference.cache
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/obj/Release/net6.0/SocialMedia.Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/obj/Release/net6.0/SocialMedia.Infraestructura.AssemblyInfoInputs.cache
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/obj/Release/net6.0/SocialMedia.Infraestructura.AssemblyInfo.cs
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/obj/Release/net6.0/SocialMedia.Infraestructura.csproj.CoreCompileInputs.cache
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/obj/Release/net6.0/SocialMedia.Infraestructura.csproj.CopyComplete
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/obj/Release/net6.0/SocialMedia.Infraestructura.dll
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/obj/Release/net6.0/ref/SocialMedia.Infraestructura.dll
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/obj/Release/net6.0/SocialMedia.Infraestructura.pdb
+/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/obj/Release/net6.0/SocialMedia.Infraestructura.genruntimeconfig.cache

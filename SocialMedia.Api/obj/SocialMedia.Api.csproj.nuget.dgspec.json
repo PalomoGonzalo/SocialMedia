@@ -1,42 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Api\\SocialMedia.Api.csproj": {}
+    "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Api/SocialMedia.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Api\\SocialMedia.Api.csproj": {
+    "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Api/SocialMedia.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Api\\SocialMedia.Api.csproj",
+        "projectUniqueName": "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Api/SocialMedia.Api.csproj",
         "projectName": "SocialMedia.Api",
-        "projectPath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Api\\SocialMedia.Api.csproj",
-        "packagesPath": "C:\\Users\\mati_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Api\\obj\\",
+        "projectPath": "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Api/SocialMedia.Api.csproj",
+        "packagesPath": "/home/matias/.nuget/packages/",
+        "outputPath": "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Api/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mati_\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/matias/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj": {
-                "projectPath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj"
+              "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/SocialMedia.Core.csproj": {
+                "projectPath": "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/SocialMedia.Core.csproj"
               },
-              "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj": {
-                "projectPath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj"
+              "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/SocialMedia.Infraestructura.csproj": {
+                "projectPath": "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/SocialMedia.Infraestructura.csproj"
               }
             }
           }
@@ -69,6 +63,10 @@
               "target": "Package",
               "version": "[6.0.10, )"
             },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -92,32 +90,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.110/sdk/6.0.110/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj": {
+    "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/SocialMedia.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
+        "projectUniqueName": "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/SocialMedia.Core.csproj",
         "projectName": "SocialMedia.Core",
-        "projectPath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj",
-        "packagesPath": "C:\\Users\\mati_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Core\\obj\\",
+        "projectPath": "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/SocialMedia.Core.csproj",
+        "packagesPath": "/home/matias/.nuget/packages/",
+        "outputPath": "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mati_\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/matias/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -147,6 +139,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.10, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
@@ -164,40 +160,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.110/sdk/6.0.110/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj": {
+    "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/SocialMedia.Infraestructura.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj",
+        "projectUniqueName": "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/SocialMedia.Infraestructura.csproj",
         "projectName": "SocialMedia.Infraestructura",
-        "projectPath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Infraestructura\\SocialMedia.Infraestructura.csproj",
-        "packagesPath": "C:\\Users\\mati_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Infraestructura\\obj\\",
+        "projectPath": "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/SocialMedia.Infraestructura.csproj",
+        "packagesPath": "/home/matias/.nuget/packages/",
+        "outputPath": "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Infraestructura/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mati_\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/matias/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj": {
-                "projectPath": "C:\\Users\\mati_\\Desktop\\SocialMedia\\SocialMedia.Core\\SocialMedia.Core.csproj"
+              "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/SocialMedia.Core.csproj": {
+                "projectPath": "/home/matias/Documentos/SocialMedia/SocialMedia/SocialMedia.Core/SocialMedia.Core.csproj"
               }
             }
           }
@@ -241,6 +231,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.10, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
@@ -258,7 +252,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.110/sdk/6.0.110/RuntimeIdentifierGraph.json"
         }
       }
     }

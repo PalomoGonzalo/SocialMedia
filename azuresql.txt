@@ -1,6 +1,10 @@
 matias
 SocialMedia.1
 SocialMedia.1
+"DefaultConnection":// "Server=tcp:socialmedia.database.windows.net,1433;Initial Catalog=socialmedia;Persist Security Info=False;User ID=matias;Password=SocialMedia.1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+"DefaultConnection":"Server=.,1433\\LOCAL;Database=SocialMedia;User Id = sa; Password=Matias.1;"
+
+
 
 
 USE [SocialMedia]
