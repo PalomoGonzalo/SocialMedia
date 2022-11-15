@@ -13,14 +13,14 @@ using System.Net;
 using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-var path= $@"C:\Users\153131\AppData\Roaming\Microsoft\UserSecrets\3b75afd6-b244-402f-b20e-fcfae64c3ab2\";
+//var path= $@"C:\Users\153131\AppData\Roaming\Microsoft\UserSecrets\3b75afd6-b244-402f-b20e-fcfae64c3ab2\";
 builder.WebHost.ConfigureAppConfiguration((hostingContext, config) =>
     {
         var env = hostingContext.HostingEnvironment;
         
 
-        config.SetBasePath(path)//Path.GetDirectoryName(Assembly.GetEntryAssembly().Location))
-            .AddJsonFile("secrets.json", optional: false, reloadOnChange: true);
+        config.SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location))
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
     });
 
